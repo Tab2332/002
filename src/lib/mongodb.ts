@@ -1,11 +1,13 @@
 import mongoose from 'mongoose';
 
+/* eslint-disable no-var */
 declare global {
   var mongoose: {
     conn: typeof mongoose | null;
     promise: Promise<typeof mongoose> | null;
   };
 }
+/* eslint-enable no-var */
 
 if (!process.env.MONGODB_URI) {
   throw new Error('请添加 MONGODB_URI 环境变量');
