@@ -1,8 +1,9 @@
 import { sql } from '@vercel/postgres';
 import { Message } from '@/types';
+import type { QueryResultRow } from '@vercel/postgres';
 
 // 将数据库行转换为Message类型
-function toMessage(row: any): Message {
+function toMessage(row: QueryResultRow): Message {
   return {
     id: row.id,
     recipient: row.recipient,
